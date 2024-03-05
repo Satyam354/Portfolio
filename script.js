@@ -50,22 +50,3 @@ const typed = new Typed(".multiple-text", {
     backDelay: 900,
     loop: true,
 });
-
-
-document.getElementById("emailForm").addEventListener("submit", function (event) {
-    event.preventDefault();
-    const fullName = document.getElementsByName("fullName")[0].value;
-    const emailAddress = document.getElementsByName("emailAddress")[0].value;
-    const mobileNumber = document.getElementsByName("mobileNumber")[0].value;
-    const subject = document.getElementsByName("subject")[0].value;
-    const message = document.getElementsByName("message")[0].value;
-    const mailtoParams = `mailto:singhsatyam8495@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message + "\n\n\n\nName: " + fullName + "\nEmail: " + emailAddress + "\nPhone: " + mobileNumber)}`;
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    if (isMobile) {
-        window.location.href = mailtoParams;
-    } else {
-        const composeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent('singhsatyam8495@gmail.com')}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(message + "\n\n\n\nName: " + fullName + "\nEmail: " + emailAddress + "\nPhone: " + mobileNumber)}`;
-        window.open(composeUrl, "_blank");
-    }
-    this.reset();
-});
