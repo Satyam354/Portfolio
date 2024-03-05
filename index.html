@@ -221,11 +221,13 @@
     <!--Contact section design-->
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me!</span></h2>
-        <form action="#" method="POST" id="emailForm">
+        <form action="https://api.web3forms.com/submit" method="POST" id="emailForm">
           <div class="input-box">
             <input type="text" name="fullName" placeholder="Full Name" required>
             <input type="email" name="emailAddress" placeholder="Email Address" required>
           </div>
+          <input type="hidden" name="access_key" value="36b26f26-8779-4795-b85d-2b38ee90080c">
+
           <div class="input-box">
             <input type="number" name="mobileNumber" placeholder="Mobile Number">
             <input type="text" name="subject" placeholder="Subject" required>
@@ -234,6 +236,7 @@
           <input type="submit" value="Send Message" class="btn">
         </form>
       </section>
+
 
     <!--Footer design section -->
     <footer class="footer">
